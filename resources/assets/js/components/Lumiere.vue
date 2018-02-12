@@ -4,7 +4,7 @@
             <span class="lumiere__title">Oggi in Cineteca</span>
             <div class="film" v-for="film in programmazione">
                 <div v-if="film.immagine" class="film__attachment">
-                    <img class="film__attachment__image" :src="film.immagine"/>
+                    <img class="film__attachment__image" :src="getUrl(film.immagine)"/>
                 </div>
                 <span class="film__titolo">{{ film.titolo }}</span>
                 <div class="film__proiezioni">
@@ -54,6 +54,10 @@ export default {
 
         getOrario(stringa) {
             return moment(stringa).format('HH:mm');
+        },
+
+        getUrl(stringa) {
+            return '/secureimg?url=' + stringa;
         },
     },
 
