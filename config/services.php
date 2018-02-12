@@ -17,4 +17,9 @@ return [
     'packagist' => [
         'vendor' => env('PACKAGIST_VENDOR'),
     ],
+
+    'arpa' => [
+        'provincia' => env('ARPA_PROVINCIA'),
+        'zona' => env('ARPA_ZONA'),
+    ],
 ];

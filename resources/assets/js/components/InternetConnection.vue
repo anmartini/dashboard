@@ -2,7 +2,7 @@
     <section v-if="offline" class="internet-connection">
         <div class="internet-connection__alert">
             <span class="internet-connection__icon h-icon"></span>
-            <span class="internet-connection__text">Internet connection</span>
+            <span class="internet-connection__text">Nessuna connessione</span>
         </div>
     </section>
 </template>

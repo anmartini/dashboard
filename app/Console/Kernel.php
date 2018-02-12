@@ -13,9 +13,11 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        \App\Console\Components\Arpa\FetchMeteo::class,
         \App\Console\Components\Calendar\FetchCalendarEvents::class,
         \App\Console\Components\GitHub\FetchTotals::class,
         \App\Console\Components\InternetConnection\SendHeartbeat::class,
+        \App\Console\Components\Lumiere\FetchProgrammazione::class,
         \App\Console\Components\Npm\FetchTotals::class,
         \App\Console\Components\Music\FetchCurrentTrack::class,
         \App\Console\Components\Packagist\FetchTotals::class,
@@ -32,8 +34,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('dashboard:fetch-current-track')->everyMinute();
         $schedule->command('dashboard:send-heartbeat')->everyMinute();
         $schedule->command('dashboard:fetch-tasks')->everyFiveMinutes();
-        $schedule->command('dashboard:fetch-github-totals')->everyThirtyMinutes();
-        $schedule->command('dashboard:fetch-packagist-totals')->hourly();
-        $schedule->command('dashboard:fetch-npm-totals')->hourly();
+        $schedule->command('dashboard:fetch-arpa-meteo')->everyFiveMinutes();
+        $schedule->command('dashboard:fetch-lumiere-programmazione')->everyFiveMinutes();
     }
 }

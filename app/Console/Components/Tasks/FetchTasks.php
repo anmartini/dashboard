@@ -19,7 +19,7 @@ class FetchTasks extends Command
         $contentOfFiles = collect($fileNames)
             ->combine($fileNames)
             ->map(function ($fileName) use ($gitHub) {
-                return $gitHub->fetchFileContent('spatie', 'tasks', "{$fileName}.md", 'master');
+                return $gitHub->fetchFileContent('AnMartini', 'data', "{$fileName}.md", 'master');
             })
             ->map(function ($fileInfo) {
                 return file_get_contents($fileInfo['download_url']);

@@ -25,7 +25,7 @@ class FetchCalendarEvents extends Command
                     'date' => Carbon::createFromFormat('Y-m-d H:i:s', $sortDate)->format(DateTime::ATOM),
                 ];
             })
-            ->unique('name')
+            // ->unique('name')
             ->toArray();
 
         event(new EventsFetched($events));

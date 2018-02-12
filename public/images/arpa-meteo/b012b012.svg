@@ -1,0 +1,17 @@
+
+<svg width="32px" height="34px" viewBox="0 0 32 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="b011b011" fill-rule="nonzero">
+            <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.8" x="0" y="19" width="8" height="2"></rect>
+            <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.8" x="0" y="23" width="13" height="2"></rect>
+            <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.8" x="0" y="27" width="15" height="2"></rect>
+            <rect id="Rectangle-path" fill="#FFFFFF" opacity="0.8" x="0" y="31" width="16" height="2"></rect>
+            <path d="M15,0 L17,0 L17,5 L15,5 L15,0 Z M2.00000068,14.0000007 L2.00000068,12.0000007 L7.00000068,12.0000007 L7.00000068,14.0000007 L2.00000068,14.0000007 Z M4.4837362,4.09985 L5.8979362,2.68565 L9.4334362,6.22115 L8.0192362,7.63535 L4.4837362,4.09985 Z M17,7.08 L17,20.92 C16.673,20.968 16.341,21 16,21 C12.134,21 9,17.866 9,14 C9,10.134 12.134,7 16,7 C16.341,7 16.673,7.032 17,7.08 Z" id="Rectangle-path" fill="#FCDE00"></path>
+            <path d="M25,22.142 L25,19 L23,19 L23,22.142 C21.277,22.588 20,24.139 20,26 C20,28.209 21.791,30 24,30 C26.209,30 28,28.209 28,26 C28,24.139 26.723,22.588 25,22.142 Z" id="Shape" fill="#5AC8FA"></path>
+            <path d="M29,19.767 L29,5 C29,2.238 26.762,0 24,0 C21.238,0 19,2.238 19,5 L19,19.767 C17.173,21.233 16,23.481 16,26 C16,30.411 19.589,34 24,34 C28.411,34 32,30.411 32,26 C32,23.48 30.827,21.232 29,19.767 Z M24,32 C20.687,32 18,29.313 18,26 C18,23.78 19.208,21.848 21,20.81 L21,5 C21,3.346 22.346,2 24,2 C25.654,2 27,3.346 27,5 L27,20.81 C28.792,21.848 30,23.781 30,26 C30,29.313 27.313,32 24,32 Z" id="Shape" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

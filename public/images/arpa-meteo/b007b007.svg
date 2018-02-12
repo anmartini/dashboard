@@ -1,0 +1,13 @@
+
+<svg width="35px" height="40px" viewBox="0 0 35 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="scattered-thunderstorm-night" fill-rule="nonzero">
+            <polygon id="Shape" fill="#F8E71C" points="11.5 19 18.5 19 17 25 20.5 25 11.75 40 12.5 30 9 30"></polygon>
+            <path d="M22.5,14 C22.352,14 22.207,14.014 22.061,14.022 C20.915,10.526 17.629,8 13.75,8 C8.918,8 5,11.918 5,16.75 C5,16.863 5.013,16.975 5.017,17.088 C2.172,17.558 0,20.022 0,23 C0,26.313 2.687,29 6,29 L7.177,29 L9.904,17 L21.062,17 L19.562,23 L23.983,23 L20.483,29 L23.001,29 L23.001,28.975 C26.909,28.717 30.001,25.473 30.001,21.5 C30,17.357 26.643,14 22.5,14 Z" id="Shape" fill="#FFFFFF" opacity="0.5"></path>
+            <path d="M32.5,10 C28.357,10 25,6.643 25,2.5 C25,1.651 25.147,0.839 25.407,0.078 C21.746,0.549 18.813,3.343 18.144,6.936 C20.416,7.953 22.296,9.744 23.413,12.042 C26.267,12.315 28.748,13.862 30.301,16.101 C32.773,14.86 34.555,12.448 34.922,9.592 C34.161,9.853 33.349,10 32.5,10 Z" id="Shape" fill="#F8E71C"></path>
+        </g>
+    </g>
+</svg>

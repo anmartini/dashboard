@@ -1,0 +1,84 @@
+.arpa-meteo {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.arpa-meteo__aggiornamento {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    color: var(--gray-light);
+    text-align: right;
+    text-transform: uppercase;
+    font-size: var(--font-size-xxxs);
+}
+
+.arpa-meteo__giorno {
+    width: 100%;
+    color: var(--yellow);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: var(--font-size-xs);
+}
+
+.arpa-meteo__content {
+    text-align: center;
+}
+
+.arpa-meteo__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arpa-meteo__row__weather {
+    color: var(--gray-light);
+    font-size: var(--font-size-m);
+    margin: 0.5rem 1rem;
+}
+
+.arpa-meteo__row__weather__image {
+    height: 5rem;
+    max-width: 5rem;
+}
+
+.arpa-meteo__dati__icona {
+    height: 1rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.arpa-meteo__dati__temperature:after {
+    content: '\00b0';
+}
+
+.arpa-meteo__dati__rain:after {
+    content: 'mm';
+    text-transform: lowercase;
+}
+
+.arpa-meteo__row__weather__description {
+    margin-left: 0.25em;
+}
+
+.arpa-meteo__dati, .arpa-meteo__row__weather__orario {
+    color: var(--gray-light);
+    text-transform: uppercase;
+    font-size: var(--font-size-xs);
+}
+
+@media (min-height: 60em) {
+    .arpa-meteo__row__weather {
+        display: block;
+    }
+}
+
+@media (max-height: 45em) {
+    #arpa-meteo__domani {
+        display: none;
+    }
+}

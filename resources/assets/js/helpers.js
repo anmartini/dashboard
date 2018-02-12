@@ -26,7 +26,7 @@ export function relativeDate(value) {
     const date = moment(value);
 
     if (moment().isSame(date, 'd')) {
-        return 'Today';
+        return 'oggi'+' alle '+date.format('HH:mm');
     }
 
     if (
@@ -34,48 +34,48 @@ export function relativeDate(value) {
             .add(1, 'day')
             .isSame(date, 'd')
     ) {
-        return 'Tomorrow';
+        return 'domani'+' alle '+date.format('HH:mm');
     }
 
     if (date.isBetween(moment().add(1, 'day'), moment().add(8, 'days'), 'day')) {
-        return date.format('dddd');
+        return date.format('dddd')+' alle '+date.format('HH:mm');
     }
 
-    return 'In ' + date.toNow(true);
+    return 'tra ' + date.toNow(true);
 }
 
 export function relativeDateTime(value) {
     const date = moment(value);
 
     if (moment().diff(date, 'days') > 5) {
-        return 'A long long time ago';
+        return 'molto tempo fa';
     }
 
     if (moment().diff(date, 'days') > 1) {
-        return `${moment().diff(date, 'days')} days ago`;
+        return `${moment().diff(date, 'days')} giorni fa`;
     }
 
     if (moment().diff(date, 'hours') >= 24) {
-        return 'A day ago';
+        return 'un giorno fa';
     }
 
     if (moment().diff(date, 'hours') > 1) {
-        return `${moment().diff(date, 'hours')} hours ago`;
+        return `${moment().diff(date, 'hours')} ore fa`;
     }
 
     if (moment().diff(date, 'minutes') > 59) {
-        return 'An hour ago';
+        return `un'ora fa`;
     }
 
     if (moment().diff(date, 'seconds') > 119) {
-        return `${moment().diff(date, 'minutes')} minutes ago`;
+        return `${moment().diff(date, 'minutes')} minuti fa`;
     }
 
     if (moment().diff(date, 'seconds') >= 60) {
-        return 'A minute ago';
+        return 'un minuto fa';
     }
 
-    return 'Just now';
+    return 'ora';
 }
 
 export function diffInSeconds(otherMoment) {
