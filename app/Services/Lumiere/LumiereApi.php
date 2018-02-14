@@ -2,6 +2,7 @@
 
 namespace App\Services\Lumiere;
 
+use Log;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
@@ -29,7 +30,11 @@ class LumiereApi
                 $programmazione->push(new LumiereFilm($item->first(), $item->pluck('orario')));
             }
 
-            Cache::put('lumiere-programmazione', $programmazione, Carbon::now()->endOfDay());
+            $scadenza = Carbon::now()->endOfDay();
+
+            Log::info('Lumiere messo in cache!', ['scadenza' => $scadenza]);
+
+            Cache::put('lumiere-programmazione', $programmazione, $scadenza);
         }
 
         $this->programmazione = $programmazione;
