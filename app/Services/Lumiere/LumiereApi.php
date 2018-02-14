@@ -72,7 +72,7 @@ class LumiereProiezione
         $this->titolo = (string) $data->title;
         $this->descrizione = (string) $data->description;
         $this->orario = new Carbon((string) $data->pubDate);
-        $this->immagine = (string) $data->children('http://search.yahoo.com/mrss/')->content->thumbnail->attributes()->url;
+        $this->immagine = urlencode((string) $data->children('http://search.yahoo.com/mrss/')->content->thumbnail->attributes()->url);
     }
 }
 
