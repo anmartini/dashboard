@@ -7,7 +7,7 @@ Route::group(['middleware' => 'auth.basic'], function () {
     	$url = request()->url;
     	$type = 'image/'.pathinfo($url, PATHINFO_EXTENSION);
     	
-    	return response(file_get_contents($url))->header('Content-type', $type);
+    	return response(file_get_contents(str_replace('%2F', '/', urlencode($url)))->header('Content-type', $type);
     });
 });
 
