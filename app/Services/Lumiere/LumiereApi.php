@@ -30,7 +30,7 @@ class LumiereApi
                 $programmazione->push(new LumiereFilm($item->first(), $item->pluck('orario')));
             }
 
-            $scadenza = Carbon::now()->endOfDay();
+            $scadenza = Carbon::now()->addDay()->startOfDay()->addMinutes(5);
 
             Log::info('Lumiere messo in cache!', ['scadenza' => $scadenza]);
 
