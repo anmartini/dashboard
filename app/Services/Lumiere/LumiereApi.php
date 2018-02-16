@@ -46,15 +46,16 @@ class LumiereApi
         $now = Carbon::now();
 
         foreach ($this->programmazione as $film) {
-            $orari = $film->proiezioni->filter(function($item, $key) use ($now) {
+            $orari = $film->proiezioni->filter(function ($item, $key) use ($now) {
                 return $item->gt($now);
             });
 
-            if ($orari->count() > 0)
+            if ($orari->count() > 0) {
                 $proiezioni->push(new LumiereFilm($film, $orari));
+            }
         }
 
-        return $proiezioni->sortBy(function($item, $key) {
+        return $proiezioni->sortBy(function ($item, $key) {
             return $item->proiezioni->first();
         });
     }
@@ -66,13 +67,18 @@ class LumiereProiezione
     public $descrizione;
     public $orario;
     public $immagine;
-    
-    function __construct($data)
+
+    public function __construct($data)
     {
+        $thumbnail = $data->children('http://search.yahoo.com/mrss/')->content->thumbnail;
         $this->titolo = (string) $data->title;
         $this->descrizione = (string) $data->description;
         $this->orario = new Carbon((string) $data->pubDate);
-        $this->immagine = urlencode((string) $data->children('http://search.yahoo.com/mrss/')->content->thumbnail->attributes()->url);
+        if ($thumbnail) {
+            $this->immagine = (string) $thumbnail->attributes()->url;
+        } else {
+            $this->immagine = null;
+        }
     }
 }
 
@@ -82,8 +88,8 @@ class LumiereFilm
     public $descrizione;
     public $immagine;
     public $proiezioni;
-    
-    function __construct($data, Collection $orari)
+
+    public function __construct($data, Collection $orari)
     {
         $this->titolo = $data->titolo;
         $this->descrizione = $data->descrizione;
