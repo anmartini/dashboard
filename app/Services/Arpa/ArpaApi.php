@@ -45,7 +45,8 @@ class ArpaData
     public function __construct($data)
     {
         $this->data = $data->xml;
-        $this->aggiornamento = Carbon::createFromTimestamp($data->xml->{'@attributes'}->timestamp);
+
+        $this->aggiornamento = Carbon::createFromTimestamp($data->xml->attributes->timestamp);
     }
 }
 
@@ -138,10 +139,10 @@ class ArpaDati
     public function __construct($data = null, int $id = null)
     {
         if ($data && $id) {
-            $this->temperatura_minima = intval($data->temperatura_minima->{'t' . $id}->{'@attributes'}->dato);
-            $this->temperatura_massima = intval($data->temperatura_massima->{'T' . $id}->{'@attributes'}->dato);
-            $this->precipitazioni = $data->precipitazioni->{'P' . $id}->{'@attributes'}->dato === '0' ? false : $data->precipitazioni->{'P' . $id}->{'@attributes'}->dato;
-            $this->vento_massimo = intval($data->vento_massimo->{'V' . $id}->{'@attributes'}->dato);
+            $this->temperatura_minima = intval($data->temperatura_minima->{'t' . $id}->attributes->dato);
+            $this->temperatura_massima = intval($data->temperatura_massima->{'T' . $id}->attributes->dato);
+            $this->precipitazioni = $data->precipitazioni->{'P' . $id}->attributes->dato === '0' ? false : $data->precipitazioni->{'P' . $id}->attributes->dato;
+            $this->vento_massimo = intval($data->vento_massimo->{'V' . $id}->attributes->dato);
         }
     }
 }
@@ -165,9 +166,9 @@ class ArpaProvincia
             $dati = $this->dati->{$zona};
 
             $meteo = (object) [
-                'mattina' => $this->meteo->mattina->{$zona}->{'@attributes'},
-                'pomeriggio' => $this->meteo->pomeriggio->{$zona}->{'@attributes'},
-                'sera_notte' => $this->meteo->sera_notte->{$zona}->{'@attributes'},
+                'mattina' => $this->meteo->mattina->{$zona}->attributes,
+                'pomeriggio' => $this->meteo->pomeriggio->{$zona}->attributes,
+                'sera_notte' => $this->meteo->sera_notte->{$zona}->attributes,
             ];
         } catch (\Exception $e) {
             return null;
@@ -226,7 +227,7 @@ class ArpaTendenza extends ArpaData
     public function getGiorno(int $giorno)
     {
         try {
-            $data = $this->data->{'giorno' . $giorno}->{'@attributes'};
+            $data = $this->data->{'giorno' . $giorno}->attributes;
         } catch (\Exception $e) {
             return null;
         }
