@@ -10,7 +10,7 @@ export default {
 
     computed: {
         gridTemplate() {
-            return `grid-template: repeat(${this.rows}, 1fr) / repeat(${this.columns}, 1fr); padding: 0 60px;`;
+            return `grid-template: repeat(${this.rows}, 1fr) / repeat(${this.columns}, 1fr);`;
         },
     },
 };
