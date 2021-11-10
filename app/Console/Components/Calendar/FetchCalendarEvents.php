@@ -17,7 +17,7 @@ class FetchCalendarEvents extends Command
     public function handle()
     {
         $events = collect(Event::get())
-            ->limit(20)
+            ->take(20)
             ->map(function (Event $event) {
                 $sortDate = $event->getSortDate();
 
