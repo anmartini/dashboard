@@ -35,11 +35,11 @@ class FetchMeteo extends Command
         ];
 
         $dopodomani = [
-            'aggiornamento' => $arpa->getGiorno('domani')->aggiornamento->diffForHumans(),
-        	'dati' => $dataDomani->dati,
-        	'mattina' => $dataDomani->getOrario('mattina'),
-        	'pomeriggio' => $dataDomani->getOrario('pomeriggio'),
-        	'sera_notte' => $dataDomani->getOrario('sera_notte'),
+            'aggiornamento' => $arpa->getGiorno('dopodomani')->aggiornamento->diffForHumans(),
+        	'dati' => $dataDopodomani->dati,
+        	'mattina' => $dataDopodomani->getOrario('mattina'),
+        	'pomeriggio' => $dataDopodomani->getOrario('pomeriggio'),
+        	'sera_notte' => $dataDopodomani->getOrario('sera_notte'),
         ];
 
         event(new MeteoFetched($oggi, $domani, $dopodomani));
