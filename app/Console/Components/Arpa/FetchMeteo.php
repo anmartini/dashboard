@@ -16,6 +16,7 @@ class FetchMeteo extends Command
     {
     	$dataOggi = $arpa->getGiorno('oggi')->getProvincia(config('services.arpa.provincia', 'BO'))->getZona(config('services.arpa.zona', 'P'));
         $dataDomani = $arpa->getGiorno('domani')->getProvincia(config('services.arpa.provincia', 'BO'))->getZona(config('services.arpa.zona', 'P'));
+        $dataDopodomani = $arpa->getGiorno('dopodomani')->getProvincia(config('services.arpa.provincia', 'BO'))->getZona(config('services.arpa.zona', 'P'));
 
         $oggi = [
             'aggiornamento' => $arpa->getGiorno('oggi')->aggiornamento->diffForHumans(),
@@ -33,6 +34,14 @@ class FetchMeteo extends Command
         	'sera_notte' => $dataDomani->getOrario('sera_notte'),
         ];
 
-        event(new MeteoFetched($oggi, $domani));
+        $dopodomani = [
+            'aggiornamento' => $arpa->getGiorno('domani')->aggiornamento->diffForHumans(),
+        	'dati' => $dataDomani->dati,
+        	'mattina' => $dataDomani->getOrario('mattina'),
+        	'pomeriggio' => $dataDomani->getOrario('pomeriggio'),
+        	'sera_notte' => $dataDomani->getOrario('sera_notte'),
+        ];
+
+        event(new MeteoFetched($oggi, $domani, $dopodomani));
     }
 }

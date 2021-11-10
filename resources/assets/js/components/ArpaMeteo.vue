@@ -51,6 +51,31 @@
                     </div>
                 </div>
             </time>
+            <time class="arpa-meteo__content" id="arpa-meteo__dopodomani">
+                <span class="arpa-meteo__aggiornamento">Aggiornato {{ dopodomani.aggiornamento }}</span>
+                <span class="arpa-meteo__giorno">Dopodomani</span><br>
+                <span class="arpa-meteo__dati"><img class="arpa-meteo__dati__icona" src="/images/arpa-meteo/low.svg"> <span class="arpa-meteo__dati__temperature">{{ dopodomani.dati.temperatura_minima }}</span> <img class="arpa-meteo__dati__icona" src="/images/arpa-meteo/high.svg"> <span class="arpa-meteo__dati__temperature">{{ dopodomani.dati.temperatura_massima }}</span> <span v-if="dopodomani.dati.precipitazioni"><img class="arpa-meteo__dati__icona" src="/images/arpa-meteo/rain.svg"> <span class="arpa-meteo__dati__rain">{{ dopodomani.dati.precipitazioni }}</span></span></span>
+                <div class="arpa-meteo__row">
+                    <div class="arpa-meteo__row__weather">
+                        <div class="arpa-meteo__row__weather__description">
+                            <img class="arpa-meteo__row__weather__image" :src="dopodomani.mattina.icona" :title="dopodomani.mattina.previsione">
+                        </div>
+                        <span class="arpa-meteo__row__weather__orario">Mattina</span>
+                    </div>
+                    <div class="arpa-meteo__row__weather">
+                        <div class="arpa-meteo__row__weather__description">
+                            <img class="arpa-meteo__row__weather__image" :src="dopodomani.pomeriggio.icona" :title="dopodomani.pomeriggio.previsione">
+                        </div>
+                        <span class="arpa-meteo__row__weather__orario">Pomeriggio</span>
+                    </div>
+                    <div class="arpa-meteo__row__weather">
+                        <div class="arpa-meteo__row__weather__description">
+                            <img class="arpa-meteo__row__weather__image" :src="dopodomani.sera_notte.icona" :title="dopodomani.sera_notte.previsione">
+                        </div>
+                        <span class="arpa-meteo__row__weather__orario">Sera / Notte</span>
+                    </div>
+                </div>
+            </time>
         </section>
     </tile>
 </template>
@@ -117,6 +142,27 @@ export default {
                     previsione: '',
                 },
             },
+            dopodomani: {
+                aggiornamento: '',
+                dati: {
+                    temperatura_minima: '',
+                    temperatura_massima: '',
+                    precipitazioni: '',
+                    vento: '',
+                },
+                mattina: {
+                    icona: '',
+                    previsione: '',
+                },
+                pomeriggio: {
+                    icona: '',
+                    previsione: '',
+                },
+                sera_notte: {
+                    icona: '',
+                    previsione: '',
+                },
+            },
         };
     },
 
@@ -127,6 +173,7 @@ export default {
                 'Arpa.MeteoFetched': response => {
                     this.oggi = response.oggi;
                     this.domani = response.domani;
+                    this.dopodomani = response.dopodomani;
                 },
             };
         },
